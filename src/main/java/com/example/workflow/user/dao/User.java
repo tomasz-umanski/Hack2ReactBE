@@ -1,13 +1,12 @@
 package com.example.workflow.user.dao;
 
+import com.example.workflow.organization.dao.Organization;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 
+@Data
 @Entity
 @Getter
 @Setter
@@ -22,10 +21,11 @@ public class User {
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "UUID")
     private String id = UUID.randomUUID().toString();
 
-    @Column(name = "organization_id", nullable = false)
-    private String organizationId;
+    @ManyToOne
+    @JoinColumn(name = "organization_id")
+    private Organization organization;
 
-    @Column(name = "login", nullable = false, unique = true)
+    @Column(name = "login", nullable = false, unique = false)
     private String login;
 
 }
