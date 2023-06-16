@@ -1,17 +1,15 @@
-package com.example.workflow.user.dto;
+package com.example.workflow.organization.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
-
-    @NotBlank(message = "id cannot be blank")
-    private String id;
+public class CreateOrganizationDto {
 
     @NotBlank(message = "login cannot be blank")
     private String login;
