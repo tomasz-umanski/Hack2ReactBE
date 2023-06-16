@@ -35,14 +35,15 @@ class WorkspaceService {
     public WorkspaceDto create(final CreateWorkspaceDto createWorkSpaceDto) {
         log.info("WorkSpace create");
 
-        Map<String,Object> variables = new HashMap<>();
+/*        Map<String,Object> variables = new HashMap<>();
         variables.put("id", "2342342-34-23-42-34-23-4");
         variables.put("name", "siema");
 
         ProcessInstance processInstance = processEngine.getRuntimeService()
-            .startProcessInstanceByKey(HACK_2_REACT_PROCESS, variables);
+            .startProcessInstanceByKey(HACK_2_REACT_PROCESS, variables);*/
 
-        final var createWorkSpace = workSpaceMapper.toEntity(createWorkSpaceDto);
-        return workSpaceMapper.toDto(workSpaceRepository.save(createWorkSpace));
+        final var createWorkspace = workSpaceMapper.toEntity(createWorkSpaceDto);
+        final var savedWorkspace = workSpaceRepository.save(createWorkspace);
+        return workSpaceMapper.toDto(savedWorkspace);
     }
 }
