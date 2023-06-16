@@ -15,4 +15,7 @@ public class CreateUserDto {
     @NotBlank(message = "login cannot be blank")
     private String login;
 
+    @NotBlank(message = "organizationId cannot be blank")
+    private String organizationId;
+
 }
