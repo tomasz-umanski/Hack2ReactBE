@@ -1,0 +1,11 @@
+com\example\workflow\workspace\dao\Workspace.class
+com\example\workflow\workspace\WorkspaceService.class
+com\example\workflow\workspace\WorkspaceController.class
+com\example\workflow\workspace\WorkspaceMapper.class
+com\example\workflow\workspace\dto\WorkspaceDto.class
+com\example\workflow\workspace\WorkspaceRepository.class
+com\example\workflow\workspace\WorkspaceMapperImpl.class
+com\example\workflow\common\specification\SpecificationConfig.class
+com\example\workflow\Application.class
+com\example\workflow\workspace\dto\CreateWorkspaceDto.class
+com\example\workflow\workspace\WorkspaceSpecification.class
