@@ -23,9 +23,9 @@ class UserService {
     }
 
     @Transactional
-    public UserDto create(final CreateUserDto createWorkSpaceDto) {
+    public UserDto create(final CreateUserDto createUserDto) {
         log.info("WorkSpace create");
-        final var createWorkSpace = userMapper.toEntity(createWorkSpaceDto);
-        return userMapper.toDto(userRepository.save(createWorkSpace));
+        final var createUser = userMapper.toEntity(createUserDto);
+        return userMapper.toDto(userRepository.save(createUser));
     }
 }

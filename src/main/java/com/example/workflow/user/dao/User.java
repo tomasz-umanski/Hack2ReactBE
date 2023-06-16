@@ -22,8 +22,8 @@ public class User {
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "UUID")
     private String id = UUID.randomUUID().toString();
 
-    @Column(name = "customer_id", nullable = false)
-    private String customerId;
+    @Column(name = "organization_id", nullable = false)
+    private String organizationId;
 
     @Column(name = "login", nullable = false, unique = true)
     private String login;
