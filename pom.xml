@@ -83,7 +83,7 @@
     <dependency>
       <groupId>net.kaczmarzyk</groupId>
       <artifactId>specification-arg-resolver</artifactId>
-      <version>${kaczmarzyk.version}</version>
+      <version>3.0.1</version>
     </dependency>
 
   </dependencies>
