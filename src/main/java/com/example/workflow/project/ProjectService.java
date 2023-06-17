@@ -4,6 +4,8 @@ import com.example.workflow.project.dao.Project;
 import com.example.workflow.project.dto.ProjectDto;
 import com.example.workflow.project.dto.ProjectOrganizationDto;
 import lombok.RequiredArgsConstructor;
+import org.camunda.bpm.engine.ProcessEngine;
+import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -12,13 +14,18 @@ import javax.transaction.Transactional;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static java.time.OffsetDateTime.now;
 
 @Service
 @RequiredArgsConstructor
 class ProjectService {
+    private static final String HACK_2_REACT_PROCESS = "ContactProcess";
+
+    private final ProcessEngine processEngine;
     private final ProjectRepository projectRepository;
     private final ProjectMapper projectMapper;
 

@@ -1,0 +1,105 @@
+{
+  "components": [
+    {
+      "label": "Imię i nazwisko zgłaszającego",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1tm0bxu",
+        "columns": 8
+      },
+      "id": "Field_04ez675",
+      "key": "name",
+      "readonly": false,
+      "disabled": true
+    },
+    {
+      "label": "Organizacja",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1tm0bxu",
+        "columns": 8
+      },
+      "id": "Field_0g5oogc",
+      "key": "organization",
+      "readonly": false,
+      "disabled": true
+    },
+    {
+      "label": "Temat",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1c6uu14",
+        "columns": 8
+      },
+      "id": "Field_1any738",
+      "key": "topic",
+      "readonly": false,
+      "disabled": true
+    },
+    {
+      "label": "Kategoria",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1c6uu14",
+        "columns": 8
+      },
+      "id": "Field_0ecdkmi",
+      "key": "category",
+      "readonly": false,
+      "disabled": true
+    },
+    {
+      "label": "Treść zgłoszenia",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_08iflr3",
+        "columns": null
+      },
+      "id": "Field_0qqovb8",
+      "key": "content",
+      "readonly": false,
+      "disabled": true
+    },
+    {
+      "label": "Odpowiedź na zgłoszenie",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1aofw89",
+        "columns": null
+      },
+      "id": "Field_1l1f6z9",
+      "key": "response"
+    },
+    {
+      "action": "submit",
+      "label": "Zamknij zadanie",
+      "type": "button",
+      "layout": {
+        "row": "Row_0y1gacp",
+        "columns": null
+      },
+      "id": "Field_1sbebxb",
+      "key": "field_14hneec"
+    },
+    {
+      "action": "submit",
+      "label": "Wyślij",
+      "type": "button",
+      "layout": {
+        "row": "Row_0y1gacp",
+        "columns": null
+      },
+      "id": "Field_1kn4blc",
+      "key": "field_0j0qwia"
+    }
+  ],
+  "type": "default",
+  "id": "Form_19r1upu",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 9
+}
