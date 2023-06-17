@@ -1,17 +1,16 @@
-package com.example.workflow.workspace.dto;
+package com.example.workflow.project.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WorkspaceDto{
-
+public class ProjectOrganizationDto {
     private String id;
 
     private String name;
-
 }

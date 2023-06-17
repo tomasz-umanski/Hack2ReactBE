@@ -1,6 +1,6 @@
-package com.example.workflow.user;
+package com.example.workflow.event;
 
-import com.example.workflow.user.dao.User;
+import com.example.workflow.event.dao.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-interface UserRepository extends JpaRepository<User, UUID>, JpaSpecificationExecutor<User> {
+interface EventRepository extends JpaRepository<Event, UUID>, JpaSpecificationExecutor<Event> {
 }

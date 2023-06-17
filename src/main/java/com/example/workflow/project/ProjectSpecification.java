@@ -1,13 +1,13 @@
-package com.example.workflow.user;
+package com.example.workflow.project;
 
-import com.example.workflow.user.dao.User;
+import com.example.workflow.project.dao.Project;
 import net.kaczmarzyk.spring.data.jpa.domain.LikeIgnoreCase;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.Or;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 import org.springframework.data.jpa.domain.Specification;
 
 @Or({
-    @Spec(path= "login", params = "login", spec = LikeIgnoreCase.class)
+        @Spec(path= "title", params = "title", spec = LikeIgnoreCase.class)
 })
-interface UserSpecification extends Specification<User> {
+interface ProjectSpecification extends Specification<Project> {
 }

@@ -1,11 +1,11 @@
 package com.example.workflow.organization.dao;
 
+import com.example.workflow.event.dao.Event;
+import com.example.workflow.project.dao.Project;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -22,13 +22,12 @@ public class Organization {
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "UUID")
     private String id = UUID.randomUUID().toString();
 
-    @Column(name = "name", nullable = false, unique = true)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "address", nullable = false)
-    private String address;
+    @ManyToMany(mappedBy = "organizationList")
+    private List<Event> eventList;
 
-    @Column(name = "type", nullable = false)
-    private String type;
-
+    @ManyToMany(mappedBy = "organizationList")
+    private List<Project> projectList;
 }

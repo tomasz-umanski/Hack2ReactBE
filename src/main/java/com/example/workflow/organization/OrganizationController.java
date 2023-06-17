@@ -1,27 +1,29 @@
 package com.example.workflow.organization;
 
-import com.example.workflow.organization.dto.CreateOrganizationDto;
 import com.example.workflow.organization.dto.OrganizationDto;
-import com.example.workflow.user.dto.CreateUserDto;
-import com.example.workflow.user.dto.UserDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+
+@Slf4j
 @RestController
 @RequestMapping(value = "/organization")
+@RequiredArgsConstructor
 class OrganizationController {
     private final OrganizationService organizationService;
 
     @GetMapping
     public Page<OrganizationDto> findAll(OrganizationSpecification organizationSpecification, Pageable pageable) {
+        log.info("OrganizationController findAll");
         return organizationService.findAll(organizationSpecification, pageable);
     }
 
     @PostMapping
-    public OrganizationDto create(@RequestBody CreateOrganizationDto createOrganizationDto) {
-        return organizationService.create(createOrganizationDto);
+    public void createMockData() {
+        log.info("OrganizationController createMockData");
+        organizationService.createMockData();
     }
 }
