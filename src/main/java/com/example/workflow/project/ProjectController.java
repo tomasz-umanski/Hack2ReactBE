@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/project")
 @RequiredArgsConstructor
-class ProjectController {
+public class ProjectController {
     private final ProjectService projectService;
 
     @GetMapping

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/organization")
 @RequiredArgsConstructor
-class OrganizationController {
+public class OrganizationController {
     private final OrganizationService organizationService;
 
     @GetMapping
