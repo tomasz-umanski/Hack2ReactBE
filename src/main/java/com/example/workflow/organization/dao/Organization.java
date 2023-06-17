@@ -1,6 +1,7 @@
 package com.example.workflow.organization.dao;
 
 import com.example.workflow.event.dao.Event;
+import com.example.workflow.project.dao.Project;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,4 +27,7 @@ public class Organization {
 
     @ManyToMany(mappedBy = "organizationList")
     private List<Event> eventList;
+
+    @ManyToMany(mappedBy = "organizationList")
+    private List<Project> projectList;
 }

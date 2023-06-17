@@ -14,4 +14,6 @@ public class OrganizationDto {
     private String name;
 
     private List<OrganizationEventDto> eventList;
+
+    private List<OrganizationProjectDto> projectList;
 }
