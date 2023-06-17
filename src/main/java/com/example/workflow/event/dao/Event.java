@@ -1,32 +1,32 @@
-package com.example.workflow.workspace.dao;
+package com.example.workflow.event.dao;
 
-import java.util.UUID;
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.OffsetDateTime;
+import java.util.UUID;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+@Data
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Getter
-@Setter
-@Table(name = "WORKSPACE")
-public class Workspace {
+@Table(name = "event")
+public class Event {
 
     @Id
     @EqualsAndHashCode.Include
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "UUID")
     private UUID id = UUID.randomUUID();
 
-    @Column(name = "name", unique = true, nullable = false)
-    private String name;
+    @Column(name = "start_date")
+    private OffsetDateTime startDate;
 
+    @Column(name = "end_date")
+    private OffsetDateTime endDate;
 }
