@@ -1,4 +1,4 @@
-package com.example.workflow.event.dto;
+package com.example.workflow.organization.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,13 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
-import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDto {
+public class OrganizationEventDto {
     private String id;
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
@@ -23,5 +22,4 @@ public class EventDto {
     private OffsetDateTime lastUpdated;
     private boolean active;
     private String mainOrganizationId;
-    private List<EventOrganizationDto> organizationList;
 }
