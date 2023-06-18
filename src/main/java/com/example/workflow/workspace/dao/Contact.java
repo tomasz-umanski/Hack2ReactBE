@@ -15,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "project")
+@Table(name = "contact")
 public class Contact {
     @Id
     @EqualsAndHashCode.Include
