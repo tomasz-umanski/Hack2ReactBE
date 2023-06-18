@@ -20,10 +20,4 @@ public class OrganizationController {
         log.info("OrganizationController findAll");
         return organizationService.findAll(organizationSpecification, pageable);
     }
-
-    @PostMapping
-    public void createMockData() {
-        log.info("OrganizationController createMockData");
-        organizationService.createMockData();
-    }
 }

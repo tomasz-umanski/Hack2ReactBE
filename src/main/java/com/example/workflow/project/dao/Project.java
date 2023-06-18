@@ -1,5 +1,6 @@
 package com.example.workflow.project.dao;
 
+import com.example.workflow.organization.dao.AccountType;
 import com.example.workflow.organization.dao.Organization;
 import lombok.*;
 
@@ -22,6 +23,9 @@ public class Project {
     @EqualsAndHashCode.Include
     @Column(name = "id", unique = true, nullable = false, columnDefinition = "UUID")
     private UUID id = UUID.randomUUID();
+
+    @Column(name = "category")
+    private String category;
 
     @Column(name = "start_date")
     private OffsetDateTime startDate;
@@ -50,6 +54,9 @@ public class Project {
     @Column(name = "main_organization_id")
     private String mainOrganizationId;
 
+    @Column(name = "external_url")
+    private String externalUrl;
+
     @ManyToMany
     @JoinTable(
             name = "project_organization",
@@ -57,4 +64,12 @@ public class Project {
             inverseJoinColumns = @JoinColumn(name = "organization_id")
     )
     private List<Organization> organizationList;
+
+    @ManyToMany
+    @JoinTable(
+            name = "project_target",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "account_type_id")
+    )
+    private List<AccountType> targetList;
 }

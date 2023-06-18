@@ -34,6 +34,6 @@ public class Contact {
     @Column(name = "category")
     private String category;
 
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 }

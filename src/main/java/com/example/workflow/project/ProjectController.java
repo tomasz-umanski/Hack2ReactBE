@@ -1,5 +1,6 @@
 package com.example.workflow.project;
 
+import com.example.workflow.project.dto.CreateProjectDto;
 import com.example.workflow.project.dto.ProjectDto;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +32,11 @@ public class ProjectController {
     }
 
     @PostMapping
+    public ProjectDto create(@RequestBody CreateProjectDto createProjectDto) {
+        return projectService.create(createProjectDto);
+    }
+
+    @PostMapping("/mock")
     public void createMockData() {
         log.info("ProjectController createMockData");
         projectService.createMockData();

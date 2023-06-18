@@ -9,6 +9,4 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 interface OrganizationMapper {
     OrganizationDto toDto(Organization organization);
-
-    List<Organization> toEntityList(List<OrganizationDto> organizationDtoList);
 }

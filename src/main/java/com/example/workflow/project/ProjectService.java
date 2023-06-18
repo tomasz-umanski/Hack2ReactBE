@@ -1,6 +1,7 @@
 package com.example.workflow.project;
 
 import com.example.workflow.project.dao.Project;
+import com.example.workflow.project.dto.CreateProjectDto;
 import com.example.workflow.project.dto.ProjectDto;
 import com.example.workflow.project.dto.ProjectOrganizationDto;
 import javassist.NotFoundException;
@@ -25,9 +26,6 @@ import static java.time.OffsetDateTime.now;
 @Service
 @RequiredArgsConstructor
 class ProjectService {
-    private static final String HACK_2_REACT_PROCESS = "ContactProcess";
-
-    private final ProcessEngine processEngine;
     private final ProjectRepository projectRepository;
     private final ProjectMapper projectMapper;
 
@@ -43,6 +41,11 @@ class ProjectService {
         }
 
         return projectMapper.toDto(project.get());
+    }
+
+    public ProjectDto create(CreateProjectDto createProjectDto) {
+        final var createProject = projectMapper.toEntity(createProjectDto);
+        return projectMapper.toDto(projectRepository.save(createProject));
     }
 
     @Transactional
