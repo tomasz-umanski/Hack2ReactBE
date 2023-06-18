@@ -19,7 +19,7 @@ public class ProjectController {
 
     @GetMapping
     public Page<ProjectDto> findAll(ProjectSpecification projectSpecification, Pageable pageable) {
-        log.info("ProjectController findAll, pageable: {}", pageable);
+        log.info("ProjectController findAll, pageable: {}, {}", pageable, projectSpecification);
         return projectService.findAll(projectSpecification, pageable);
     }
 
