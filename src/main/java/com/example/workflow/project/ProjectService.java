@@ -3,6 +3,7 @@ package com.example.workflow.project;
 import com.example.workflow.project.dao.Project;
 import com.example.workflow.project.dto.ProjectDto;
 import com.example.workflow.project.dto.ProjectOrganizationDto;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import static java.time.OffsetDateTime.now;
 
@@ -31,6 +33,16 @@ class ProjectService {
 
     public Page<ProjectDto> findAll(ProjectSpecification projectSpecification, Pageable pageable) {
         return projectRepository.findAll(projectSpecification, pageable).map(projectMapper::toDto);
+    }
+
+    public ProjectDto get(UUID projectId) throws NotFoundException {
+        final var project = projectRepository.findById(projectId);
+
+        if(project.isEmpty()) {
+            throw new NotFoundException(String.format("Cannot find project with id: %s", projectId));
+        }
+
+        return projectMapper.toDto(project.get());
     }
 
     @Transactional

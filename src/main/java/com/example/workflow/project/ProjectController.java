@@ -1,6 +1,7 @@
 package com.example.workflow.project;
 
 import com.example.workflow.project.dto.ProjectDto;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @Slf4j
@@ -21,6 +23,11 @@ public class ProjectController {
     public Page<ProjectDto> findAll(ProjectSpecification projectSpecification, Pageable pageable) {
         log.info("ProjectController findAll, pageable: {}, {}", pageable, projectSpecification);
         return projectService.findAll(projectSpecification, pageable);
+    }
+
+    @GetMapping("/{id}")
+    public ProjectDto get(@PathVariable("id") final UUID projectId) throws NotFoundException {
+        return projectService.get(projectId);
     }
 
     @PostMapping
